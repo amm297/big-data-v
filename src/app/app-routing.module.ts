@@ -5,6 +5,7 @@ import { NotFoundComponent } from "./pages/not-found/not-found.component";
 
 const routes: Routes = [
   { path: "", component: ResumeComponent },
+  { path: "resume", component: ResumeComponent },
   { path: "**", component: NotFoundComponent },
 ];
 
