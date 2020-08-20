@@ -4,13 +4,26 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ResumeComponent } from "./pages/resume/resume.component";
+
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+
+import { AppTranslateModule } from "./modules/translate/translate.module";
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    FooterComponent,
+    ResumeComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AppTranslateModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,17 @@
+:host {
+  grid-area: footer;
+  footer {
+    display: flex;
+    justify-content: center;
+    min-height: 3rem;
+    background-color: var(--primary-color);
+    padding: 0px var(--medium-pdding);
+
+    & a {
+      padding: var(--point-four-rem-padding);
+      &:hover {
+        fill: var(--white-color);
+      }
+    }
+  }
+}

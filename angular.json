@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "big-data-v"
+    }
+  },
+  "defaultProject": "big-data-v",
+  "cli": {
+    "analytics": false
+  }
 }

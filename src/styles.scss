@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  // Colors
+  --primary-color: #48b080;
+  --white-color: #fff;
+  --red-color: #f00;
+
+  --background-color: #e5e5e5;
+
+  --text-color: #2d2d2d;
+
+  // Padding
+  --medium-pdding: 12%;
+  --point-four-rem-padding: 0.4rem;
+
+  // Sizes
+  --icon-width-default: 2rem;
+  --icon-height-default: 2rem;
+
+  // Default classes
+
+  .icon {
+    width: var(--icon-width-default);
+    height: var(--icon-height-default);
+  }
+
+  & > * {
+    margin: 0;
+    padding: 0;
+  }
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
