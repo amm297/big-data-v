@@ -1,6 +1,4 @@
 import { NgModule } from "@angular/core";
-
-// import ngx-translate and the http loader
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
@@ -9,6 +7,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
   imports: [
     HttpClientModule,
     TranslateModule.forRoot({
+      defaultLanguage: 'es',
       loader: {
         provide: TranslateLoader,
         useFactory: (http: HttpClient) => {
@@ -20,7 +19,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
   ],
   exports: [TranslateModule],
 })
-export class AppTranslateModule {}
+export class AppTranslateModule { }
 
 // required for AOT compilation
 export function HttpLoaderFactory(http: HttpClient) {

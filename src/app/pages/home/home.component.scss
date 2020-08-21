@@ -1,0 +1,24 @@
+:host{
+  .title{
+    margin: 10px 0px;
+  }
+  .form{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    &-field{
+      display: flex;
+
+      flex-direction: row;
+      justify-content: space-between;
+      background-color: red;
+      & input {
+        width: 70%;
+      }
+    }
+    &-button {
+      align-self: center;
+      width: 30%;
+    }
+  }
+}

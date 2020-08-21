@@ -1,1 +1,18 @@
-<p>home works!</p>
+
+<p class="title"> {{ 'home.searcher.title' | translate }} </p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+  <div class="form-field">
+    <label for="neighborhood">Neighborhood</label>
+    <select formControlName="neighborhood" id="neighborhood">
+      <option *ngFor="let neighborhood of neighborhoods" [value]="neighborhood">
+        {{neighborhood}}
+      </option>
+    </select>
+  </div>
+  <div class="form-field">
+    <label for="paxes">Paxes</label>
+    <input id="paxes" formControlName="paxes"  type="number">
+  </div>
+  <button class="form-button">Buscar</button>
+</form>

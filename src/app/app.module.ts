@@ -11,7 +11,7 @@ import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
 import { AppTranslateModule } from "./modules/translate/translate.module";
-import { HomeComponent } from './pages/home/home.component';
+import { HomeModule } from './pages/home/home.module';
 
 @NgModule({
   declarations: [
@@ -20,11 +20,11 @@ import { HomeComponent } from './pages/home/home.component';
     FooterComponent,
     ResumeComponent,
     NotFoundComponent,
-    HomeComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HomeModule,
     AppTranslateModule,
   ],
   providers: [],
