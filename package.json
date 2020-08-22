@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy" "ng build --prod --base-href=/angular-ci-cd/",
+    "deploy" "ng build --prod --base-href=\"/angular-ci-cd/\"",
     "local-deploy": "ng build --prod --output-path docs --base-href=\"https://amm297.github.io/big-data-v/\" && git add . && git commit -a -m \"Deploy updated\" && git push -u origin master"
   },
   "private": true,
