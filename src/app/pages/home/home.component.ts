@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
-
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { HomeService } from './services/home.service';
 import { Request } from './domain/request'
-import { environment } from './../../../environments/environment';
-
+import { AppRoutes } from '../../app-routes';
 
 @Component({
   selector: 'app-home',
@@ -13,139 +13,19 @@ import { environment } from './../../../environments/environment';
 export class HomeComponent implements OnInit {
 
   private _form: FormGroup;
+  private _neighborhoods = new Array<string>();
 
-  private _neighborhoods = [
-    "Abrantes",
-    "Acacias",
-    "Adelfas",
-    "Aeropuerto",
-    "Aguilas",
-    "Alameda de Osuna",
-    "Almagro",
-    "Almenara",
-    "Almendrales",
-    "Aluche",
-    "Ambroz",
-    "Amposta",
-    "Apostol Santiago",
-    "Arapiles",
-    "Aravaca",
-    "Arcos",
-    "Argüelles",
-    "Atocha",
-    "Bellas Vistas",
-    "Berruguete",
-    "Buenavista",
-    "Butarque",
-    "Campamento",
-    "Canillas",
-    "Canillejas",
-    "Casa de Campo",
-    "Casco Histórico de Barajas",
-    "Casco Histórico de Vallecas",
-    "Casco Histórico de Vicálvaro",
-    "Castellana",
-    "Castilla",
-    "Castillejos",
-    "Chopera",
-    "Ciudad Jardín",
-    "Ciudad Universitaria",
-    "Colina",
-    "Comillas",
-    "Concepción",
-    "Corralejos",
-    "Cortes",
-    "Costillares",
-    "Cuatro Caminos",
-    "Cuatro Vientos",
-    "Cármenes",
-    "Delicias",
-    "El Goloso",
-    "El Plantío",
-    "El Viso",
-    "Embajadores",
-    "Entrevías",
-    "Estrella",
-    "Fontarrón",
-    "Fuente del Berro",
-    "Fuentelareina",
-    "Gaztambide",
-    "Goya",
-    "Guindalera",
-    "Hellín",
-    "Hispanoamérica",
-    "Ibiza",
-    "Imperial",
-    "Jerónimos",
-    "Justicia",
-    "La Paz",
-    "Legazpi",
-    "Lista",
-    "Los Angeles",
-    "Los Rosales",
-    "Lucero",
-    "Marroquina",
-    "Media Legua",
-    "Mirasierra",
-    "Moscardó",
-    "Niño Jesús",
-    "Nueva España",
-    "Numancia",
-    "Opañel",
-    "Orcasitas",
-    "Orcasur",
-    "Pacífico",
-    "Palacio",
-    "Palomas",
-    "Palomeras Bajas",
-    "Palomeras Sureste",
-    "Palos de Moguer",
-    "Pavones",
-    "Peñagrande",
-    "Pilar",
-    "Pinar del Rey",
-    "Piovera",
-    "Portazgo",
-    "Pradolongo",
-    "Prosperidad",
-    "Pueblo Nuevo",
-    "Puerta Bonita",
-    "Puerta del Angel",
-    "Quintana",
-    "Recoletos",
-    "Rejas",
-    "Rios Rosas",
-    "Rosas",
-    "Salvador",
-    "San Andrés",
-    "San Cristobal",
-    "San Diego",
-    "San Fermín",
-    "San Isidro",
-    "San Juan Bautista",
-    "San Pascual",
-    "Santa Eugenia",
-    "Simancas",
-    "Sol",
-    "Timón",
-    "Trafalgar",
-    "Universidad",
-    "Valdeacederas",
-    "Valdefuentes",
-    "Valdemarín",
-    "Valdezarza",
-    "Vallehermoso",
-    "Valverde",
-    "Ventas",
-    "Vinateros",
-    "Vista Alegre",
-    "Zofío"
-  ]
+  constructor(
+    private _fb: FormBuilder,
+    private _homeService: HomeService,
+    private _router: Router) {
 
-  constructor(private _fb: FormBuilder) {
-    console.log('ENVIROMENT')
-    console.log(environment.TEST_VALUE)
     this._form = this.initForm();
+    this._homeService.locations()
+      .then(data => {
+        console.log('request to load locations');
+        this._neighborhoods = data
+      })
   }
 
   ngOnInit(): void {
@@ -153,17 +33,17 @@ export class HomeComponent implements OnInit {
 
   private initForm(): FormGroup {
     return this._fb.group({
-      neighborhood: ['', null],
-      paxes: [1, null]
+      neighborhood: ['', [Validators.required]],
+      pax: [1, null]
     })
   }
 
   onSubmit() {
-    console.log(this._form.value)
-  }
-
-  makeArr(e) {
-    console.log(e);
+    if (this._form.valid) {
+      console.log(this._form.value)
+      const request = new Request(this._form.value);
+      this._router.navigate([AppRoutes.BASE_PATH, AppRoutes.APPARTMENT], { queryParams: request })
+    }
   }
 
   get form(): FormGroup {

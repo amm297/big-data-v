@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HomeComponent } from './home.component'
 import { AppTranslateModule } from "../../modules/translate/translate.module";
+import { HomeService } from './services/home.service';
 
 
 
@@ -15,7 +16,10 @@ import { AppTranslateModule } from "../../modules/translate/translate.module";
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
-    AppTranslateModule
+    AppTranslateModule,
+  ],
+  providers: [
+    HomeService
   ]
 
 })

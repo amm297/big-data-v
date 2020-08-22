@@ -1,4 +1,9 @@
 export class Request {
   neighborhood: string;
-  paxes: number;
+  pax: number;
+
+  constructor(request) {
+    this.neighborhood = request['neighborhood'];
+    this.pax = request['pax'];
+  }
 }

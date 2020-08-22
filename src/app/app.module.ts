@@ -12,6 +12,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 
 import { AppTranslateModule } from "./modules/translate/translate.module";
 import { HomeModule } from './pages/home/home.module';
+import { AppartmentModule } from './pages/appartment/appartment.module';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { HomeModule } from './pages/home/home.module';
     BrowserModule,
     AppRoutingModule,
     HomeModule,
+    AppartmentModule,
     AppTranslateModule,
   ],
   providers: [],
