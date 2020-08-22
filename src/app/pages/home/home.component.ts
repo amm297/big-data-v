@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 import { Request } from './domain/request'
+import { environment } from './../../../environments/environment';
+
 
 @Component({
   selector: 'app-home',
@@ -141,6 +143,8 @@ export class HomeComponent implements OnInit {
   ]
 
   constructor(private _fb: FormBuilder) {
+    console.log('ENVIROMENT')
+    console.log(environment.TEST_VALUE)
     this._form = this.initForm();
   }
 

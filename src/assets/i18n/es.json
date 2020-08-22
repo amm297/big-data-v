@@ -1,7 +1,14 @@
 {
-    "header": {
-        "nav": {
-            "resume": "Curriculum"
-        }
-    }
+   "test":"caca",
+   "header":{
+      "nav":{
+         "resume":"Curriculum"
+      },
+      "test":"test"
+   },
+   "home":{
+      "searcher":{
+         "title":"Selecciona donde quereis ir y cuantos sereis:"
+      }
+   }
 }
