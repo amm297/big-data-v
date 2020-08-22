@@ -31,4 +31,4 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BASE_BRANCH: master
         BRANCH: gh-pages
-        FOLDER: dist/BigDataV
+        FOLDER: dist/big-data-v
