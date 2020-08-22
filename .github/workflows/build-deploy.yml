@@ -9,20 +9,30 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    # - name: Checkout
-    #   uses: actions/checkout@v1
-    - uses: actions/setup-node@v1 #this installs node and npm for us
+    - uses: actions/checkout@v2
+    - name: Use Node.js
+      uses: actions/setup-node@v1
       with:
         node-version: '10.x'
-    # - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+    - run: npm install
+    - run: npm run-script deploy
+      env:
+        TEST: ${{ secrets.TEST }}
+    # steps:
+    # # - name: Checkout
+    # #   uses: actions/checkout@v1
+    # - uses: actions/setup-node@v1 #this installs node and npm for us
     #   with:
-    #     path: ~/.npm
-    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-node-
-    - name: Build
-      run: npm install
-    - name: Deploy
-      run: npm run-script deploy
-      # with:
-      #   TEST: ${{ secrets.TEST }}
+    #     node-version: '10.x'
+    # # - uses: actions/cache@v1 # this allows for re-using node_modules caching, making builds a bit faster.
+    # #   with:
+    # #     path: ~/.npm
+    # #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    # #     restore-keys: |
+    # #       ${{ runner.os }}-node-
+    # - name: Build
+    #   run: npm install
+    # - name: Deploy
+    #   run: npm run-script deploy
+    #   # with:
+    #   #   TEST: ${{ secrets.TEST }}
