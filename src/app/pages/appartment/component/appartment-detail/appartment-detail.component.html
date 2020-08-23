@@ -1,0 +1,13 @@
+ <p>appartment-detail works!</p>
+
+<div class="appartment-card">
+  <img src={{appartment?.details?.image}} alt={{appartment?.details?.name}}>
+  <div class="appartment-details">
+    <div class="appartment-header">
+      <p> {{appartment?.details?.name}} </p>
+      <app-review-detail [review]="appartment?.review"></app-review-detail>
+    </div>
+    <p> {{appartment?.location?.address}} </p>
+    <app-price-detail [price]="appartment?.price"></app-price-detail>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+:host {
+  .appartment {
+    &-card {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+    }
+    &-details {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      background-color: pink;
+      text-align: center;
+      align-content: center;
+      padding: var(--padding-one);
+    }
+    &-header {
+      display: flex;
+      // flex: 1;
+      flex-direction: row;
+      background: aqua;
+      justify-content: space-between;
+    }
+  }
+}
