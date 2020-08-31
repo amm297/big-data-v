@@ -18,9 +18,7 @@
         padding: var(--point-four-rem-padding);
         a {
             text-decoration: none;
-            &:link {
-                color: var(--text-color);
-            }
+            &:link,
             &:visited {
                 color: var(--text-color);
             }

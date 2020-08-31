@@ -13,9 +13,7 @@
         font-size: 15px;
         & a {
             padding: var(--point-four-rem-padding);
-            &:link {
-                color: var(--text-color);
-            }
+            &:link,
             &:visited {
                 color: var(--text-color);
             }
