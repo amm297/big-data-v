@@ -1,24 +1,67 @@
-:host{
-  .title{
-    margin: 10px 0px;
-  }
-  .form{
-    display: flex;
-    flex:1;
-    flex-direction: column;
-    &-field{
-      display: flex;
-
-      flex-direction: row;
-      justify-content: space-between;
-      background-color: red;
-      & input {
-        width: 70%;
-      }
+:host {
+    grid-area: content;
+    .title {
+        margin: 0px 0px;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        text-align: center;
+        font-family: "sans-serif", sans-serif;
+        font-weight: normal;
+        font-size: 15px;
     }
-    &-button {
-      align-self: center;
-      width: 30%;
+    .header {
+        position: relative;
+        text-align: center;
+        width: 100%;
+        height: auto;
+        background-image: url(/assets/images/background1.jpg);
+        height: 500px;
+        background-position: 20% 5%;
+        background-repeat: no-repeat;
+        background-size: cover;
+        &-title {
+            position: absolute;
+            top: 40%;
+            left: 20%;
+            transform: translate(-50%, -50%);
+            & p {
+                color: whitesmoke;
+                text-align: center;
+                font-family: Arial, Helvetica, sans-serif;
+                font-weight: bold;
+                font-size: 100px;
+            }
+        }
     }
-  }
+    .form {
+        text-align: center;
+        display: flex;
+        flex: 1;
+        flex-direction: row;
+        justify-content: center;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        &-field {
+            display: flex;
+            flex-direction: row;
+            background-color: var(--background-color);
+            font-family: "sans-serif", sans-serif;
+            font-weight: normal;
+            font-size: 15px;
+            & input {
+                width: auto;
+            }
+        }
+        &-button {
+            align-self: center;
+            width: 10%;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            border: 0.5px solid var(--text-color);
+            &:hover {
+                background-color: var(--text-color);
+                color: var(--background-color);
+            }
+        }
+    }
 }
