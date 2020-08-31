@@ -9,6 +9,7 @@ import { TranslateService } from "@ngx-translate/core";
 export class AppComponent {
   title = 'big-data-v';
 
+  console.log('test');
   constructor(private translate: TranslateService) {
     translate.setDefaultLang("es");
     translate.use('es')
