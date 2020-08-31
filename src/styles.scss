@@ -1,41 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
 
 :root {
-  // Colors
-  --primary-color: #48b080;
-  --white-color: #fff;
-  --red-color: #f00;
-
-  --background-color: #e5e5e5;
-
-  --text-color: #2d2d2d;
-
-  // Padding
-  --medium-pdding: 12%;
-  --padding-one: 1rem;
-  --point-four-rem-padding: 0.4rem;
-
-  // Sizes
-  --icon-width-default: 2rem;
-  --icon-height-default: 2rem;
-
-  // Default classes
-
-  .icon {
-    width: var(--icon-width-default);
-    height: var(--icon-height-default);
-  }
-
-  & > * {
-    margin: 0;
-    padding: 0;
-  }
-
-  p {
-    margin: 0;
-    padding: 0;
-  }
+    // Colors
+    --primary-color: #dceff5;
+    --white-color: #fff;
+    --red-color: #f00;
+    --custom-color: #dceff5;
+    --background-color: #000000;
+    --text-color: #ffffff;
+    --text-header-color: aqua;
+    // Padding
+    --medium-pdding: 12%;
+    --point-four-rem-padding: 0.4rem;
+    // Sizes
+    --icon-width-default: 2rem;
+    --icon-height-default: 2rem;
+    // Default classes
+    .icon {
+        width: var(--icon-width-default);
+        height: var(--icon-height-default);
+    }
+    &>* {
+        margin: 0;
+        padding: 0;
+    }
+    p {
+        margin: 0;
+        padding: 0;
+        color: var(--text-color);
+    }
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

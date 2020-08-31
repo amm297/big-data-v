@@ -1,14 +1,18 @@
 {
-   "test":"caca",
-   "header":{
-      "nav":{
-         "resume":"Curriculum"
-      },
-      "test":"test"
-   },
-   "home":{
-      "searcher":{
-         "title":"Selecciona donde quereis ir y cuantos sereis:"
-      }
-   }
+    "test": "caca",
+    "header": {
+        "nav": {
+            "resume": "Menú Principal"
+        },
+        "test": "test"
+    },
+    "home": {
+
+        "searcher": {
+            "title": "Selecciona el barrio y el número de personas",
+            "neighborhood": "Barrio",
+            "pax": "Personas"
+
+        }
+    }
 }

@@ -1,21 +1,29 @@
 :host {
-  grid-area: header;
-  div {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    min-height: 4rem;
-    background-color: var(--primary-color);
-    padding: 0px var(--medium-pdding);
-  }
-
-  nav {
-    background-color: var(--red-color);
-    padding: var(--point-four-rem-padding);
-
-    a {
-      text-decoration: none;
-      
+    grid-area: header;
+    div {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        min-height: 4rem;
+        background-color: var(--background-color);
+        padding: 0px var(--medium-pdding);
+        color: var(--text-color);
+        text-align: center;
+        font-family: "sans-serif", sans-serif;
+        font-weight: normal;
+        font-size: 15px;
     }
-  }
+    nav {
+        background-color: var(--background-color);
+        padding: var(--point-four-rem-padding);
+        a {
+            text-decoration: none;
+            &:link {
+                color: var(--text-color);
+            }
+            &:visited {
+                color: var(--text-color);
+            }
+        }
+    }
 }
