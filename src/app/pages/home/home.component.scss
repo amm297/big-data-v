@@ -14,7 +14,10 @@
         text-align: center;
         width: 100%;
         height: auto;
-        background-image: url(/assets/images/background1.jpg);
+        // background: linear-gradient ( rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)), url(/assets/images/background1.jpg);
+        background: /* top, transparent red */
+        linear-gradient( #18242e00, #18242ee1), /* bottom, image */
+        url(/assets/images/background1.jpg);
         height: 500px;
         background-position: 20% 5%;
         background-repeat: no-repeat;
@@ -36,8 +39,8 @@
     .form {
         text-align: center;
         display: flex;
-        flex: 1;
         flex-direction: row;
+        flex: 1;
         justify-content: center;
         background-color: var(--background-color);
         color: var(--text-color);

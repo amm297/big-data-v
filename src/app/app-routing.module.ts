@@ -12,6 +12,7 @@ const routes: Routes = [
   { path: AppRoutes.HOME, component: HomeComponent },
   { path: AppRoutes.APPARTMENT, component: AppartmentComponent },
   { path: "resume", component: ResumeComponent },
+  { path: "home", component: HomeComponent },
   { path: "**", component: NotFoundComponent },
 ];
 
