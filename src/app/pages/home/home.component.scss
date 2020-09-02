@@ -14,10 +14,7 @@
         text-align: center;
         width: 100%;
         height: auto;
-        // background: linear-gradient ( rgba(255, 0, 0, 0.45), rgba(255, 0, 0, 0.45)), url(/assets/images/background1.jpg);
-        background: /* top, transparent red */
-        linear-gradient( #18242e00, #18242ee1), /* bottom, image */
-        url(/assets/images/background1.jpg);
+        background: linear-gradient( #18242e00, #18242ee1), url(https://images.unsplash.com/photo-1488285284925-76b108c65d01?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1454&q=80);
         height: 500px;
         background-position: 20% 5%;
         background-repeat: no-repeat;

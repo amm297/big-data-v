@@ -1,0 +1,15 @@
+:host {
+    grid-area: content;
+    & .divider {
+        height: 0.2rem;
+        width: 100%;
+        background-color: var(--background-color-dark);
+    }
+    & .content {
+        background-color: var(--background-color-dark-emphasis);
+        text-align: center;
+        flex: 1;
+        flex-direction: column;
+        padding-block-start: 20px;
+    }
+}
