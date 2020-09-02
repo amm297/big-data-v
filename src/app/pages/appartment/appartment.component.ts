@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { AppartmentService } from './services/appartment.service';
 import { Request } from './domain/request';
+import { RecommenderRequest } from './domain/recommender_request';
 import { Appartment } from './domain/appartment';
+import { AppRoutes } from '../../app-routes';
 
 @Component({
   selector: 'app-appartment',
@@ -14,6 +16,7 @@ export class AppartmentComponent implements OnInit {
   private _appartments: Array<Appartment>;
 
   constructor(
+    private _router: Router,
     private _route: ActivatedRoute,
     private _appartmentService: AppartmentService) { }
 
@@ -24,6 +27,10 @@ export class AppartmentComponent implements OnInit {
         this._appartments = data;
       })
     })
+  }
+
+  selectAppartment(req: RecommenderRequest) {
+    this._router.navigate([AppRoutes.BASE_PATH], { queryParams: req })
   }
 
   get appartments(): Array<Appartment> {

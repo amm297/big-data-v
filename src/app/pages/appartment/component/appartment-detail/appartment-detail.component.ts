@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Appartment } from '../../domain/appartment';
+import { RecommenderRequest } from '../../domain/recommender_request';
 
 @Component({
   selector: 'app-appartment-detail',
@@ -10,13 +11,21 @@ export class AppartmentDetailComponent implements OnInit {
 
   private _appartment: Appartment;
 
+  @Output() onSelect: EventEmitter<RecommenderRequest> = new EventEmitter<RecommenderRequest>();
+
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectAppartment() {
+    this.onSelect.emit({ lat: this._appartment.location.latitude, lng: this._appartment.location.longitude, review: this._appartment.review.reviewsScoreRate })
+  }
+
   @Input()
   set appartment(appartment: Appartment) {
+    console.log(appartment)
     this._appartment = appartment;
   }
 

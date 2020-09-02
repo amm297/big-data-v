@@ -8,6 +8,8 @@
             </div>
             <p> {{appartment?.location?.address}} </p>
             <app-price-detail [price]="appartment?.price"></app-price-detail>
+
+            <button (click)="selectAppartment()">Seleccionar</button>
         </div>
     </div>
 </div>

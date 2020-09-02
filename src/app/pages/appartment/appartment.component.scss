@@ -1,15 +1,12 @@
 :host {
     grid-area: content;
-    & .prueba {
-        height: 2px;
+    & .divider {
+        height: 0.2rem;
         width: 100%;
-        background-color: #4c7594;
+        background-color: var(--background-color-dark);
     }
     & .content {
-        //position: -webkit-sticky;
-        //position: sticky;
-        //top: 20px;
-        background-color: #2b4253;
+        background-color: var(--background-color-dark-emphasis);
         text-align: center;
         flex: 1;
         flex-direction: column;

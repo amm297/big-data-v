@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
@@ -7,143 +7,17 @@ import { Observable, of } from 'rxjs';
 export class HomeService {
 
   private _apiUrl: string;
+  private _path: string
 
-  constructor() {
-    this._apiUrl = '';
+  constructor(private _http: HttpClient) {
+    this._apiUrl = 'http://localhost:8080';
+    this._path = 'locations'
   }
 
   public locations(): Promise<Array<string>> {
-    return new Promise((resolve, reject) => {
-      resolve(this._mock_locations)
-    })
+    return this._http.get(`${this._apiUrl}/${this._path}`).toPromise()
+      .then(data => {
+        return data['locations'];
+      }).catch(err => { console.log(err); return null })
   }
-
-  private _mock_locations = [
-    "Abrantes",
-    "Acacias",
-    "Adelfas",
-    "Aeropuerto",
-    "Aguilas",
-    "Alameda de Osuna",
-    "Almagro",
-    "Almenara",
-    "Almendrales",
-    "Aluche",
-    "Ambroz",
-    "Amposta",
-    "Apostol Santiago",
-    "Arapiles",
-    "Aravaca",
-    "Arcos",
-    "Argüelles",
-    "Atocha",
-    "Bellas Vistas",
-    "Berruguete",
-    "Buenavista",
-    "Butarque",
-    "Campamento",
-    "Canillas",
-    "Canillejas",
-    "Casa de Campo",
-    "Casco Histórico de Barajas",
-    "Casco Histórico de Vallecas",
-    "Casco Histórico de Vicálvaro",
-    "Castellana",
-    "Castilla",
-    "Castillejos",
-    "Chopera",
-    "Ciudad Jardín",
-    "Ciudad Universitaria",
-    "Colina",
-    "Comillas",
-    "Concepción",
-    "Corralejos",
-    "Cortes",
-    "Costillares",
-    "Cuatro Caminos",
-    "Cuatro Vientos",
-    "Cármenes",
-    "Delicias",
-    "El Goloso",
-    "El Plantío",
-    "El Viso",
-    "Embajadores",
-    "Entrevías",
-    "Estrella",
-    "Fontarrón",
-    "Fuente del Berro",
-    "Fuentelareina",
-    "Gaztambide",
-    "Goya",
-    "Guindalera",
-    "Hellín",
-    "Hispanoamérica",
-    "Ibiza",
-    "Imperial",
-    "Jerónimos",
-    "Justicia",
-    "La Paz",
-    "Legazpi",
-    "Lista",
-    "Los Angeles",
-    "Los Rosales",
-    "Lucero",
-    "Marroquina",
-    "Media Legua",
-    "Mirasierra",
-    "Moscardó",
-    "Niño Jesús",
-    "Nueva España",
-    "Numancia",
-    "Opañel",
-    "Orcasitas",
-    "Orcasur",
-    "Pacífico",
-    "Palacio",
-    "Palomas",
-    "Palomeras Bajas",
-    "Palomeras Sureste",
-    "Palos de Moguer",
-    "Pavones",
-    "Peñagrande",
-    "Pilar",
-    "Pinar del Rey",
-    "Piovera",
-    "Portazgo",
-    "Pradolongo",
-    "Prosperidad",
-    "Pueblo Nuevo",
-    "Puerta Bonita",
-    "Puerta del Angel",
-    "Quintana",
-    "Recoletos",
-    "Rejas",
-    "Rios Rosas",
-    "Rosas",
-    "Salvador",
-    "San Andrés",
-    "San Cristobal",
-    "San Diego",
-    "San Fermín",
-    "San Isidro",
-    "San Juan Bautista",
-    "San Pascual",
-    "Santa Eugenia",
-    "Simancas",
-    "Sol",
-    "Timón",
-    "Trafalgar",
-    "Universidad",
-    "Valdeacederas",
-    "Valdefuentes",
-    "Valdemarín",
-    "Valdezarza",
-    "Vallehermoso",
-    "Valverde",
-    "Ventas",
-    "Vinateros",
-    "Vista Alegre",
-    "Zofío"
-  ]
-
 }

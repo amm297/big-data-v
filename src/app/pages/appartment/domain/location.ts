@@ -3,5 +3,5 @@ export class Location {
   neighborhood: string; // neighborhood cleansed
   zipcode: string;
   latitude: number;
-  logitude: number;
+  longitude: number;
 }
