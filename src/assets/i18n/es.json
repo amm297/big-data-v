@@ -2,7 +2,7 @@
     "test": "caca",
     "header": {
         "nav": {
-            "resume": "Menú Principal"
+            "home": "Menú Principal"
         },
         "test": "test"
     },

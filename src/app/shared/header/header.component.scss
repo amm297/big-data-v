@@ -5,7 +5,7 @@
         justify-content: flex-start;
         align-items: center;
         min-height: 4rem;
-        background-color: var(--background-color);
+        background-color: black;
         padding: 0px var(--medium-pdding);
         color: var(--text-color);
         text-align: center;
@@ -14,7 +14,7 @@
         font-size: 15px;
     }
     nav {
-        background-color: var(--background-color);
+        background-color: black;
         padding: var(--point-four-rem-padding);
         a {
             text-decoration: none;

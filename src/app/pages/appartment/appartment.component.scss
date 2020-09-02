@@ -1,0 +1,18 @@
+:host {
+    grid-area: content;
+    & .prueba {
+        height: 2px;
+        width: 100%;
+        background-color: #4c7594;
+    }
+    & .content {
+        //position: -webkit-sticky;
+        //position: sticky;
+        //top: 20px;
+        background-color: #2b4253;
+        text-align: center;
+        flex: 1;
+        flex-direction: column;
+        padding-block-start: 20px;
+    }
+}
