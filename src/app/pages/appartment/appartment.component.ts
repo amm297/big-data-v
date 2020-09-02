@@ -30,7 +30,7 @@ export class AppartmentComponent implements OnInit {
   }
 
   selectAppartment(req: RecommenderRequest) {
-    this._router.navigate([AppRoutes.BASE_PATH], { queryParams: req })
+    this._router.navigate([AppRoutes.BASE_PATH, AppRoutes.RECOMMENDATION], { queryParams: req })
   }
 
   get appartments(): Array<Appartment> {

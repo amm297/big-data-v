@@ -1,5 +1,6 @@
 export enum AppRoutes {
   BASE_PATH = '/',
   HOME = 'inicio',
-  APPARTMENT = 'alojamiento'
+  APPARTMENT = 'alojamiento',
+  RECOMMENDATION = 'recomendacion'
 }

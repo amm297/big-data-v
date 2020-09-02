@@ -25,7 +25,6 @@ export class AppartmentDetailComponent implements OnInit {
 
   @Input()
   set appartment(appartment: Appartment) {
-    console.log(appartment)
     this._appartment = appartment;
   }
 

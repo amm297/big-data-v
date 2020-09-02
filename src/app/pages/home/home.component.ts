@@ -23,7 +23,6 @@ export class HomeComponent implements OnInit {
     this._form = this.initForm();
     this._homeService.locations()
       .then(data => {
-        console.log('request to load locations');
         this._neighborhoods = data
       })
   }
@@ -40,7 +39,6 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     if (this._form.valid) {
-      console.log(this._form.value)
       const request = new Request(this._form.value);
       this._router.navigate([AppRoutes.BASE_PATH, AppRoutes.APPARTMENT], { queryParams: request })
     }

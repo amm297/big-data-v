@@ -14,6 +14,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { AppTranslateModule } from "./modules/translate/translate.module";
 import { HomeModule } from './pages/home/home.module';
 import { AppartmentModule } from './pages/appartment/appartment.module';
+import { RecommendationModule } from './pages/recommendation/recommendation.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
