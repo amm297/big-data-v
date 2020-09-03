@@ -28,10 +28,10 @@ jobs:
       run: |
           npm run config
       env:
-        apiUrl: ${{ secrets.API_URL }}
-        locations: ${{ secrets.LOCATIONS_ENDPOINT }}
-        apartments: ${{ secrets.APARTMENTS_ENDPOINT }}
-        restaurantRecommender: ${{ secrets.RECOMMENDER_RESTAURANT_ENDPOINT }}
+        API_URL: ${{ secrets.API_URL }}
+        LOCATIONS_ENDPOINT: ${{ secrets.LOCATIONS_ENDPOINT }}
+        APARTMENTS_ENDPOINT: ${{ secrets.APARTMENTS_ENDPOINT }}
+        RECOMMENDER_RESTAURANT_ENDPOINT: ${{ secrets.RECOMMENDER_RESTAURANT_ENDPOINT }}
     - name: Build
       run: |
           ng build --prod --base-href="/big-data-v/"
