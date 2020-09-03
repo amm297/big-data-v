@@ -20,7 +20,11 @@ export class AppartmentDetailComponent implements OnInit {
   }
 
   selectAppartment() {
-    this.onSelect.emit({ lat: this._appartment.location.latitude, lng: this._appartment.location.longitude, review: this._appartment.review.reviewsScoreRate })
+    this.onSelect.emit({
+      lat: this._appartment.location.latitude,
+      lng: this._appartment.location.longitude,
+      review: this._appartment.review.reviewsScoreRate || 0
+    })
   }
 
   @Input()

@@ -28,7 +28,10 @@ jobs:
       run: |
           npm run config
       env:
-        TEST_VALUE: ${{ secrets.TEST_VALUE }}
+        apiUrl: ${{ secrets.API_URL }}
+        locations: ${{ secrets.LOCATIONS_ENDPOINT }}
+        apartments: ${{ secrets.APARTMENTS_ENDPOINT }}
+        restaurantRecommender: ${{ secrets.RECOMMENDER_RESTAURANT_ENDPOINT }}
     - name: Build
       run: |
           ng build --prod --base-href="/big-data-v/"

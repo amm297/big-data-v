@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+import { environment } from '../../../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,8 +12,8 @@ export class HomeService {
   private _path: string
 
   constructor(private _http: HttpClient) {
-    this._apiUrl = 'http://localhost:8080';
-    this._path = 'locations'
+    this._apiUrl = environment.apiUrl;
+    this._path = environment.locations
   }
 
   public locations(): Promise<Array<string>> {

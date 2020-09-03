@@ -6,7 +6,10 @@ export const environment = {
   production: false,
   name: 'kc-bdv',
   version: 1,
-  TEST_VALUE: 'holiii'
+  apiUrl: 'http://localhost:8080',
+  locations: 'locations',
+  apartments: 'apartments/:neighborhood/:pax',
+  restaurantRecommender: 'recommender/restaurant'
 };
 
 /*

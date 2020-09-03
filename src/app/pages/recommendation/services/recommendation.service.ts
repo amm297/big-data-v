@@ -5,6 +5,8 @@ import { HttpClient } from '@angular/common/http'
 import { Recommendation } from '../domain/recommendation';
 import { adapt } from './recommendation_adapter';
 
+import { environment } from '../../../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
@@ -14,8 +16,8 @@ export class RecommendationService {
   private _path = '';
 
   constructor(private _http: HttpClient) {
-    this._apiUrl = 'http://localhost:8080';
-    this._path = 'recommender/restaurant'
+    this._apiUrl = environment.apiUrl;
+    this._path = environment.restaurantRecommender;
   }
 
   public recommend(request: Request): Promise<Array<Recommendation>> {
