@@ -24,8 +24,7 @@ jobs:
       run: |
          npm install -g @angular/cli
          npm install
-         npm run config
-         npm run deploy
+         ng build --prod --base-href="/big-data-v/"
       env:
         TEST_VALUE: ${{ secrets.TEST_VALUE }}
     - name: Deploy
