@@ -18,6 +18,7 @@ export class RecommendationDetailsComponent implements OnInit {
 
   @Input()
   set recommendation(recommendation: Restaurant) {
+    console.log(recommendation)
     this._recommendation = recommendation;
   }
 
