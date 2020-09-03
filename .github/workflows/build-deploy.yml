@@ -20,13 +20,18 @@ jobs:
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
         restore-keys: |
           ${{ runner.os }}-node-
-    - name: Build
+    - name: Installs
       run: |
-         npm install -g @angular/cli
-         npm install
-         ng build --prod --base-href="/big-data-v/"
+          npm install -g @angular/cli
+          npm install
+    - name: Configuration
+      run: |
+          npm run config
       env:
         TEST_VALUE: ${{ secrets.TEST_VALUE }}
+    - name: Build
+      run: |
+          ng build --prod --base-href="/big-data-v/"
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v2
       env:
