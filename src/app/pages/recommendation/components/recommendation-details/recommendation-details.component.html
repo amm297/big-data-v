@@ -1,3 +1,8 @@
-<p>{{recommendation?.title}}</p>
-<p>{{recommendation?.address}}</p>
-<p>{{recommendation?.distance}}</p>
+<div class="card">
+  <div class="header">
+    <p>{{recommendation?.title}}:&#160;</p>
+    <p>{{recommendation?.location?.distance | number:'.2-2'}}km </p>
+  </div>
+  <p>{{recommendation?.location?.address}}</p>
+
+</div>

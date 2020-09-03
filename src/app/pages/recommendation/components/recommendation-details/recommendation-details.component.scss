@@ -1,0 +1,22 @@
+:host {
+  background-color: red;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: var(--margin-one-rem);
+
+  & .card{
+    padding: var(--point-four-rem-padding);
+    background-color: blue;
+    width: 60%;
+  }
+
+  & .header {
+    display: flex;
+    flex:1;
+    justify-content: flex-start;
+    align-items: flex-start;
+    background-color: green;
+  }
+}
