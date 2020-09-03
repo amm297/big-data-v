@@ -8,7 +8,10 @@ const envConfigFile = `export const environment = {
    production: true,
    name: '${name}',
    version: '${version}',
-   TEST_VALUE: '${process.env.TEST_VALUE}'
+   apiUrl: '${process.env.API_URL}',
+   locations: '${process.env.LOCATIONS_ENDPOINT}',
+   apartments: '${process.env.APARTMENTS_ENDPOINT}',
+   restaurantRecommender: '${process.env.RECOMMENDER_RESTARUANT_ENDPOINT}'
 };
 `;
 
