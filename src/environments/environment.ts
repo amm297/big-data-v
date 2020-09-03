@@ -4,6 +4,8 @@
 
 export const environment = {
   production: false,
+  name: 'kc-bdv',
+  version: 1,
   TEST_VALUE: 'holiii'
 };
 

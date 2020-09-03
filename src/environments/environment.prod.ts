@@ -1,4 +1,6 @@
 export const environment = {
-  production: true,
-  TEST_VALUE: 'prueba'
+   production: true,
+   name: 'big-data-v',
+   version: '0.0.0',
+   TEST_VALUE: 'CACA'
 };

@@ -5,6 +5,8 @@ import { HomeService } from './services/home.service';
 import { Request } from './domain/request'
 import { AppRoutes } from '../../app-routes';
 
+import { environment } from '../../../environments/environment';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -19,7 +21,7 @@ export class HomeComponent implements OnInit {
     private _fb: FormBuilder,
     private _homeService: HomeService,
     private _router: Router) {
-
+    console.log(environment)
     this._form = this.initForm();
     this._homeService.locations()
       .then(data => {
