@@ -10,10 +10,10 @@ import { RoomType } from '../domain/room_type'
 import { CancellationPolicyType } from '../domain/cancellation_policy_type'
 
 export function adapt(appartments: Array<string>): Array<Appartment> {
-  return appartments.map(apt => adaptApparment(JSON.parse(apt)))
+  return appartments.map(apt => adaptApparment(apt))
 }
 
-function adaptApparment(appartment: JSON): Appartment {
+function adaptApparment(appartment): Appartment {
   const adaptedAppartment = new Appartment();
   adaptedAppartment.details = adaptDetails(appartment);
   adaptedAppartment.location = adaptLocation(appartment);
@@ -22,7 +22,7 @@ function adaptApparment(appartment: JSON): Appartment {
   return adaptedAppartment;
 }
 
-function adaptDetails(appartment: JSON): AppartmentDetails {
+function adaptDetails(appartment): AppartmentDetails {
   const details = new AppartmentDetails()
   details.id = appartment['id']
   details.url = appartment['url']
@@ -42,7 +42,7 @@ function adaptDetails(appartment: JSON): AppartmentDetails {
   return details;
 }
 
-function adaptLocation(appartment: JSON): Location {
+function adaptLocation(appartment): Location {
   const location = new Location()
   location.address = appartment['street']
   location.neighborhood = appartment['neighbourhood']
@@ -52,7 +52,7 @@ function adaptLocation(appartment: JSON): Location {
   return location;
 }
 
-function adaptPrice(appartment: JSON): Price {
+function adaptPrice(appartment): Price {
   const price = new Price()
   price.price = appartment['pricee']
   price.securityDeposit = appartment['security_depositt']
@@ -61,7 +61,7 @@ function adaptPrice(appartment: JSON): Price {
   return price;
 }
 
-function adaptReview(appartment: JSON): Review {
+function adaptReview(appartment): Review {
   const review = new Review()
   review.reviews = appartment['number_of_reviews']
   review.reviewsScoreRate = appartment['review_scores_rating']

@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   name: 'kc-bdv',
   version: 1,
-  apiUrl: 'https://keepcoding-bootcamp.appspot.com',
+  apiUrl: 'http://localhost:8080',
   locations: 'locations',
   apartments: 'apartments/:neighborhood/:pax',
   restaurantRecommender: 'recommender/restaurant'
