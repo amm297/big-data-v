@@ -6,10 +6,10 @@ import { Review } from '../domain/review';
 import { Point } from '../domain/point';
 
 export function adapt(restaurants: Array<string>): Array<Recommendation> {
-  return restaurants.map(restaurant => adaptRestaurant(JSON.parse(restaurant)));
+  return restaurants.map(restaurant => adaptRestaurant(restaurant));
 }
 
-function adaptRestaurant(restaurantApi: JSON): Recommendation {
+function adaptRestaurant(restaurantApi): Recommendation {
   const restaurant = new Restaurant();
   restaurant.type = RecommendationType.RESTARUANT;
   restaurant.title = restaurantApi['title']
@@ -22,7 +22,7 @@ function adaptRestaurant(restaurantApi: JSON): Recommendation {
   return restaurant;
 }
 
-function adaptLocation(restaurantApi: JSON): Location {
+function adaptLocation(restaurantApi): Location {
   const location = new Location();
   location.address = restaurantApi['address']
   location.distance = restaurantApi['distance']
@@ -30,7 +30,7 @@ function adaptLocation(restaurantApi: JSON): Location {
   return location;
 }
 
-function adaptReview(restaurantApi: JSON): Review {
+function adaptReview(restaurantApi): Review {
   const review = new Review();
   review.rating = restaurantApi['rating'];
   review.review = restaurantApi['review'];
