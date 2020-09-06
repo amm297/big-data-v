@@ -12,6 +12,7 @@ export class HomeService {
   private _path: string
 
   constructor(private _http: HttpClient) {
+    console.log(environment)
     this._apiUrl = environment.apiUrl;
     this._path = environment.locations
   }
