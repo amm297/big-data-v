@@ -5,12 +5,15 @@ import { RecommendationComponent } from './recommendation.component';
 import { RecommendationService } from './services/recommendation.service';
 import { RecommendationDetailsComponent } from './components/recommendation-details/recommendation-details.component'
 
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './components/map/map.component';
 
 
 @NgModule({
-  declarations: [RecommendationComponent, RecommendationDetailsComponent],
+  declarations: [RecommendationComponent, RecommendationDetailsComponent, MapComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    LeafletModule
   ],
   providers: [
     RecommendationService

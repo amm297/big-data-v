@@ -11,7 +11,7 @@ const envConfigFile = `export const environment = {
    apiUrl: '${process.env.API_URL}',
    locations: '${process.env.LOCATIONS_ENDPOINT}',
    apartments: '${process.env.APARTMENTS_ENDPOINT}',
-   restaurantRecommender: '${process.env.RECOMMENDER_RESTARUANT_ENDPOINT}'
+   restaurantRecommender: '${process.env.RECOMMENDER_RESTAURANT_ENDPOINT}'
 };
 `;
 

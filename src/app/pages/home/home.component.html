@@ -1,21 +1,28 @@
 <div class="header">
-    <div class="header-title">
-        <p>Viajes 3B</p>
-    </div>
+  <div class="header-title">
+    <p>Viajes 3B</p>
+  </div>
 </div>
-<p class="title"> {{ 'home.searcher.title' | translate }} </p>
-<form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
+<div class="searcher-container">
+  <p class="title">{{ "home.searcher.title" | translate }}</p>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form">
     <div class="form-field">
-        <label for="neighborhood">{{ 'home.searcher.neighborhood' | translate }}</label>
-        <select formControlName="neighborhood" id="neighborhood">
-    <option *ngFor="let neighborhood of neighborhoods" [value]="neighborhood">
-      {{neighborhood}}
-    </option>
-  </select>
+      <label class="label" for="neighborhood">{{
+        "home.searcher.neighborhood" | translate
+      }}</label>
+      <select class="input" formControlName="neighborhood" id="neighborhood">
+        <option
+          *ngFor="let neighborhood of neighborhoods"
+          [value]="neighborhood"
+        >
+          {{ neighborhood }}
+        </option>
+      </select>
     </div>
     <div class="form-field">
-        <label for="pax">{{ 'home.searcher.pax' | translate }}</label>
-        <input id="pax" formControlName="pax" type="number">
+      <label class="label" for="pax">{{ "home.searcher.pax" | translate }}</label>
+      <input class="input" id="pax" formControlName="pax" type="number" />
     </div>
     <button class="form-button">Buscar</button>
-</form>
+  </form>
+</div>

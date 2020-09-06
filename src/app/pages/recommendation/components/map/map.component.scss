@@ -1,0 +1,25 @@
+:host {
+  & .map-container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  & .map-frame {
+    border: 2px solid black;
+    height: 100%;
+  }
+
+  & #map {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+  }
+}
+
+.my-div-icon{
+  width: 10px;
+  height: 10px;
+  background: red;
+}

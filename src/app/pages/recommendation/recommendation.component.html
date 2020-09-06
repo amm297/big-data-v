@@ -1,5 +1,12 @@
 <div class="divider"> </div>
 <div class="content">
-    <p>Aquí tienes tus recomendaciones</p>
-    <app-recommendation-details *ngFor="let recommendation of recommendations" [recommendation]="recommendation"></app-recommendation-details>
+    <p class="title">Aquí tienes tus recomendaciones</p>
+
+    <div *ngIf="!loading" class="recommendations-container">
+      <app-map class="map" [center]="center" [markers]="markers"></app-map>
+
+      <div class="recommendations">
+        <app-recommendation-details *ngFor="let recommendation of recommendations" [recommendation]="recommendation"></app-recommendation-details>
+      </div>
+    </div>
 </div>

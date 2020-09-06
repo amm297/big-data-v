@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~leaflet/dist/leaflet.css";
 
 :root {
     // Colors
@@ -7,6 +8,7 @@
     --red-color: #f00;
     --custom-color: #dceff5;
     --background-color: #18242e;
+    --background-color-light: #dbdbdb;
     --text-color: #ffffff;
     --text-header-color: aqua;
     --background-color-dark: #4c7594;
