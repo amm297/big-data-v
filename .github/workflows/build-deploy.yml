@@ -30,6 +30,7 @@ jobs:
       env:
         API_URL: ${{ secrets.API_URL }}
         LOCATIONS_ENDPOINT: ${{ secrets.LOCATIONS_ENDPOINT }}
+        TAGS_ENDPOINT: ${{ secrets.TAGS_ENDPOINT }}
         APARTMENTS_ENDPOINT: ${{ secrets.APARTMENTS_ENDPOINT }}
         RECOMMENDER_RESTAURANT_ENDPOINT: ${{ secrets.RECOMMENDER_RESTAURANT_ENDPOINT }}
     - name: Build
