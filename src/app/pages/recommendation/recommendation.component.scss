@@ -8,7 +8,7 @@
   }
   & .content {
     background-color: var(--background-color-dark-emphasis);
-    height: 100%;
+    height: 80vh;
     & .title {
       padding: 1rem 0;
       text-align: center;
@@ -29,5 +29,10 @@
   .recommendations {
     width: 50%;
     height: 100%;
+  }
+
+  & .recommendations {
+    overflow: hidden;
+    overflow-y: auto;
   }
 }

@@ -15,6 +15,7 @@ import { AppTranslateModule } from "./modules/translate/translate.module";
 import { HomeModule } from './pages/home/home.module';
 import { AppartmentModule } from './pages/appartment/appartment.module';
 import { RecommendationModule } from './pages/recommendation/recommendation.module';
+import { InlineSVGModule } from 'ng-inline-svg';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
@@ -33,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppTranslateModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    InlineSVGModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

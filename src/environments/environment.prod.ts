@@ -4,6 +4,7 @@ export const environment = {
   version: '0.0.0',
   apiUrl: 'undefined',
   locations: 'undefined',
+  tags: 'undefined',
   apartments: 'undefined',
   restaurantRecommender: 'undefined'
 };

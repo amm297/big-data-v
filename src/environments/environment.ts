@@ -6,10 +6,11 @@ export const environment = {
   production: false,
   name: 'kc-bdv',
   version: 1,
-  apiUrl: 'http://localhost:8080',
+  apiUrl: 'https://keepcoding-bootcamp.appspot.com',
   locations: 'locations',
+  tags: 'tags',
   apartments: 'apartments/:neighborhood/:pax',
-  restaurantRecommender: 'recommender/restaurant'
+  restaurantRecommender: 'recommender'
 };
 
 /*

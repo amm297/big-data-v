@@ -14,6 +14,7 @@ export class HomeComponent implements OnInit {
 
   private _form: FormGroup;
   private _neighborhoods = new Array<string>();
+  private _tags = new Array<string>();
 
   constructor(
     private _fb: FormBuilder,
@@ -24,6 +25,10 @@ export class HomeComponent implements OnInit {
       .then(data => {
         this._neighborhoods = data
       })
+    this._homeService.tags()
+      .then(data => {
+        this._tags = data
+      })
   }
 
   ngOnInit(): void {
@@ -32,12 +37,14 @@ export class HomeComponent implements OnInit {
   private initForm(): FormGroup {
     return this._fb.group({
       neighborhood: ['', [Validators.required]],
+      tags: ['', null],
       pax: [1, null]
     })
   }
 
   onSubmit() {
     if (this._form.valid) {
+      console.log(this._form.value)
       const request = new Request(this._form.value);
       this._router.navigate([AppRoutes.BASE_PATH, AppRoutes.APPARTMENT], { queryParams: request })
     }
@@ -49,5 +56,18 @@ export class HomeComponent implements OnInit {
 
   get neighborhoods(): Array<string> {
     return this._neighborhoods;
+  }
+  get tags(): Array<string> {
+    return this._tags;
+  }
+
+  get dropdownSettings() {
+    return {
+      singleSelection: false,
+      enableCheckAll: false,
+      itemsShowLimit: 3,
+      limitSelection: 5,
+      allowSearchFilter: false
+    }
   }
 }

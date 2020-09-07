@@ -10,6 +10,7 @@ const envConfigFile = `export const environment = {
    version: '${version}',
    apiUrl: '${process.env.API_URL}',
    locations: '${process.env.LOCATIONS_ENDPOINT}',
+   tags: '${process.env.TAGS_ENDPOINT}',
    apartments: '${process.env.APARTMENTS_ENDPOINT}',
    restaurantRecommender: '${process.env.RECOMMENDER_RESTAURANT_ENDPOINT}'
 };

@@ -37,7 +37,8 @@ export class MapComponent implements OnInit {
     L.tileLayer(this._provider, { attribution: this._attribution }).addTo(this._map);
     L.svg({ clickable: true }).addTo(this._map);
 
-    this.addMarker(this._center, this.createIcon('/assets/house-marker.png'));
+    this.addMarker(this._center, this.createIcon('/assets/markers/house-marker.png'));
+    console.log(this._markers)
     if (this._markers) {
       this._markers.forEach(marker => this.addMarker(marker.point, this.createIcon(marker.iconUrl)))
     }
@@ -45,6 +46,7 @@ export class MapComponent implements OnInit {
 
   private addMarker(point: Point, icon: any) {
     if (icon) {
+      console.log(point, icon)
       L.marker(point.coords(), { icon }).addTo(this._map);
     } else {
       L.marker(point.coords()).addTo(this._map);
@@ -68,5 +70,6 @@ export class MapComponent implements OnInit {
   @Input()
   set markers(markers: Array<Marker>) {
     this._markers = markers;
+
   }
 }

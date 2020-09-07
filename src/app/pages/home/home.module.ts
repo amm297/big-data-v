@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HomeComponent } from './home.component'
 import { AppTranslateModule } from "../../modules/translate/translate.module";
 import { HomeService } from './services/home.service';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+
 
 
 
@@ -12,6 +14,7 @@ import { HomeService } from './services/home.service';
   declarations: [HomeComponent],
   exports: [HomeComponent],
   imports: [
+    NgMultiSelectDropDownModule.forRoot(),
     BrowserModule,
     CommonModule,
     FormsModule,

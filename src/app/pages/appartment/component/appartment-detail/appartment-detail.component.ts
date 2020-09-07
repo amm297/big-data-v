@@ -23,7 +23,8 @@ export class AppartmentDetailComponent implements OnInit {
     this.onSelect.emit({
       lat: this._appartment.location.latitude,
       lng: this._appartment.location.longitude,
-      review: this._appartment.review.reviewsScoreRate || 0
+      review: this._appartment.review.reviewsScoreRate || 0,
+      tags: []
     })
   }
 

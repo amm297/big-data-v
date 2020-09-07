@@ -11,7 +11,9 @@
         "searcher": {
             "title": "Selecciona el barrio y el número de personas",
             "neighborhood": "Barrio",
-            "pax": "Personas"
+            "tag": "Etiquetas",
+            "pax": "Personas",
+            "select": "Seleccionar"
 
         }
     }

@@ -14,6 +14,7 @@ import { AppRoutes } from '../../app-routes';
 export class AppartmentComponent implements OnInit {
 
   private _appartments: Array<Appartment>;
+  private _request: Request;
 
   constructor(
     private _router: Router,
@@ -22,14 +23,15 @@ export class AppartmentComponent implements OnInit {
 
   ngOnInit(): void {
     this._route.queryParams.subscribe(params => {
-      const request = new Request(params)
-      this._appartmentService.appartments(request).then(data => {
+      this._request = new Request(params)
+      this._appartmentService.appartments(this._request).then(data => {
         this._appartments = data;
       })
     })
   }
 
   selectAppartment(req: RecommenderRequest) {
+    req.tags = this._request.tags;
     this._router.navigate([AppRoutes.BASE_PATH, AppRoutes.RECOMMENDATION], { queryParams: req })
   }
 

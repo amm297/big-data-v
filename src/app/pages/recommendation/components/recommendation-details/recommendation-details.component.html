@@ -1,8 +1,13 @@
 <div class="card">
   <div class="header">
-    <p>{{recommendation?.title}}:&#160;</p>
-    <p>{{recommendation?.location?.distance | number:'.2-2'}}km </p>
-  </div>
-  <p>{{recommendation?.location?.address}}</p>
+    <div class="icon" aria-label="My icon" [inlineSVG]="recommendation.icon"></div>
 
+    <p>{{ recommendation?.title }}:&#160;</p>
+    <p>{{ recommendation?.location?.distance | number: ".2-2" }}km</p>
+  </div>
+  <div>
+    <p>{{ recommendation?.price + '€' }}&#160;{{ recommendation?.location?.address }}</p>
+    <p>{{recommendation?.restaurantType}} {{recommendation?.tags}}</p>
+    <p *ngIf="recommendation?.description" class="description">{{recommendation?.description}}</p>
+  </div>
 </div>

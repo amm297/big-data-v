@@ -33,7 +33,7 @@ export class RecommendationComponent implements OnInit {
       this._center = new Point(request.lat, request.lng);
       this._recommendationService.recommend(request).then(data => {
         this._recommendations = data;
-        this._markers = this._recommendations.map(recommendation => new Marker(recommendation.location.point, '/assets/markers/restaurant-marker.png'))
+        this._markers = this._recommendations.map(recommendation => new Marker(recommendation.location.point, recommendation.iconFroomType))
       }).finally(() => this._loading = false)
     });
   }

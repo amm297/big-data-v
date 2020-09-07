@@ -23,6 +23,21 @@
       <label class="label" for="pax">{{ "home.searcher.pax" | translate }}</label>
       <input class="input" id="pax" formControlName="pax" type="number" />
     </div>
+    <div class="form-field">
+      <label class="label" for="tag">{{
+        "home.searcher.tag" | translate
+      }}</label>
+      <ng-multiselect-dropdown
+        [placeholder]="'home.searcher.select' | translate"
+        [data]="tags"
+        formControlName="tags"
+        [settings]="dropdownSettings"
+        class="input"
+      >
+      </ng-multiselect-dropdown>
+    </div>
+
+
     <button class="form-button">Buscar</button>
   </form>
 </div>
