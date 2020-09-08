@@ -21,7 +21,7 @@ export class RecommendationService {
   }
 
   public recommend(request: Request): Promise<Array<Recommendation>> {
-    request.tags = (request.tags as string[]).join(',')
+    request.tags = request.tags ? (request.tags as string[]).join(',') : [];
     return this._http.post(`${this._apiUrl}/${this._path}`, request).toPromise()
       .then(data => {
         return adapt(data);
