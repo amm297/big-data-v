@@ -13,7 +13,6 @@ export class HomeService {
   private _pathTags: string
 
   constructor(private _http: HttpClient) {
-    console.log(environment)
     this._apiUrl = environment.apiUrl;
     this._pathLocation = environment.locations;
     this._pathTags = environment.tags;

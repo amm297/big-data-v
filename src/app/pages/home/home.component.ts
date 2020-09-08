@@ -44,7 +44,6 @@ export class HomeComponent implements OnInit {
 
   onSubmit() {
     if (this._form.valid) {
-      console.log(this._form.value)
       const request = new Request(this._form.value);
       this._router.navigate([AppRoutes.BASE_PATH, AppRoutes.APPARTMENT], { queryParams: request })
     }

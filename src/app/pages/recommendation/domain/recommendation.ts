@@ -9,9 +9,11 @@ export class Recommendation {
 
   get iconFroomType() {
     if (this.type === RecommendationType.RESTAURANT) {
-      return '/assets/markers/restaurant-marker.png'
+      return './assets/markers/restaurant-marker.png'
     } else if (this.type === RecommendationType.ACTIVITY) {
-      return '/assets/markers/activity-marker.png'
+      return './assets/markers/activity-marker.png'
+    } else if (this.type === RecommendationType.POINT_OF_INTEREST) {
+      return './assets/markers/poi-marker.png'
     }
   }
 

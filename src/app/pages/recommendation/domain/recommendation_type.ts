@@ -1,4 +1,5 @@
 export enum RecommendationType {
   RESTAURANT = 'RESTAURANT',
   ACTIVITY = 'ACTIVITY',
+  POINT_OF_INTEREST = 'POINT_OF_INTEREST',
 }
