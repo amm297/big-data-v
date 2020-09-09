@@ -1,0 +1,23 @@
+{
+    "test": "caca",
+    "header": {
+        "nav": {
+            "home": "Menú Principal"
+        },
+        "test": "test"
+    },
+    "home": {
+
+        "searcher": {
+            "title": "Selecciona el barrio y el número de personas",
+            "neighborhood": "Barrio",
+            "tag": "Que tipo de restuarantes te interesan",
+            "pax": "Personas",
+            "select": "Seleccionar"
+
+        }
+    },
+    "apartment": {
+      "none": "Oops!! Algo salió mal, intentalo en unos momentos"
+    }
+}
