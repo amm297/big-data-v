@@ -16,6 +16,7 @@ export class PriceDetailComponent implements OnInit {
 
   @Input()
   set price(price: Price) {
+    console.log(price)
     this._price = price;
   }
 

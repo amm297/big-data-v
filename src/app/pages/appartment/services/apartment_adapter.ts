@@ -19,6 +19,7 @@ function adaptApparment(appartment): Appartment {
   adaptedAppartment.location = adaptLocation(appartment);
   adaptedAppartment.price = adaptPrice(appartment);
   adaptedAppartment.review = adaptReview(appartment);
+  adaptedAppartment.new_rate = appartment['new_rate']
   return adaptedAppartment;
 }
 
@@ -54,7 +55,7 @@ function adaptLocation(appartment): Location {
 
 function adaptPrice(appartment): Price {
   const price = new Price()
-  price.price = appartment['pricee']
+  price.price = appartment['price']
   price.securityDeposit = appartment['security_depositt']
   price.cleaningFee = appartment['cleaning_feee']
   price.cancellationPolicy = CancellationPolicyType[appartment['cancellation_policy']]

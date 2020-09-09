@@ -8,4 +8,5 @@ export class Appartment {
   location: Location;
   price: Price;
   review: Review;
+  new_rate: number;
 }

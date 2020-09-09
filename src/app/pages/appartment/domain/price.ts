@@ -7,6 +7,6 @@ export class Price {
   cancellationPolicy: CancellationPolicyType;
 
   public totalPrice() {
-    return this.price + this.securityDeposit + this.cleaningFee;
+    return this.price + (this.securityDeposit ? this.securityDeposit : 0) + (this.cleaningFee ? this.cleaningFee : 0);
   }
 }

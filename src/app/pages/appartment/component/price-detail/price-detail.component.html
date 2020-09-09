@@ -1,1 +1,5 @@
-<p>price-detail works!</p>
+<p>{{price?.totalPrice()}}€ (</p>
+<p>{{price?.price}}€</p>
+<p *ngIf="price.securityDeposit">+ {{price?.securityDeposit}}€</p>
+<p *ngIf="price.cleaningFee">+ {{price?.cleaningFee}}€</p>
+<p>)</p>
