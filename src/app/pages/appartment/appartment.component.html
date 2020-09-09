@@ -2,7 +2,10 @@
 <div class="content">
     <p> Tu búsqueda para: </p>
 
-    <div>
+    <div *ngIf="appartments">
         <app-appartment-detail *ngFor="let appartment of appartments" [appartment]="appartment" (onSelect)="selectAppartment($event)"></app-appartment-detail>
+    </div>
+    <div *ngIf="!appartments">
+        <p>{{'apartment.none' | translate}}</p>
     </div>
 </div>

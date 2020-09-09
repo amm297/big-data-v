@@ -21,10 +21,21 @@ export class RecommendationService {
   }
 
   public recommend(request: Request): Promise<Array<Recommendation>> {
-    request.tags = request.tags ? (request.tags as string[]).join(',') : [];
+    console.log(request.tags)
+    request.tags = this.convertTags(request.tags);
     return this._http.post(`${this._apiUrl}/${this._path}`, request).toPromise()
       .then(data => {
         return adapt(data);
       }).catch(err => { console.log(err); return null })
+  }
+
+  private convertTags(tags): string {
+    if (tags === null || tags === undefined) {
+      return ''
+    }
+    if (typeof tags === 'string') {
+      return tags;
+    }
+    return tags.join(',')
   }
 }
